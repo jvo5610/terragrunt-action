@@ -19,5 +19,6 @@ jobs:
         go-version: 'stable'
 
     - name: Build Go code
+      working-directory: ./src
       run: |
         make build
