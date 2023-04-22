@@ -1,0 +1,21 @@
+name: terragrunt-action
+description: Terragrunt run Go action
+
+inputs:
+  arch:
+    description: 'Architecture of the system (e.g. amd64, arm64)'
+    default: amd64
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout repository
+      run: actions/checkout@v3
+    - name: Run Go binary
+      run: |
+        echo "Binary path: ${{ inputs.binary-path }}"
+        echo "GitHub workspace: $GITHUB_WORKSPACE"
+        echo "Architecture: ${{ inputs.arch }}"
+        cd $GITHUB_WORKSPACE
+        chmod +x dist/${{ inputs.arch }}/terragrunt
+        ./dist/${{ inputs.arch }}/terragrunt
