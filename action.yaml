@@ -19,5 +19,6 @@ runs:
       working-directory: ${{ github.workspace }}
       run: |
         echo "Architecture: ${{ inputs.arch }}"
-        echo "$(ls)"
+        chmod +x terragrunt-action/dist/${{ inputs.arch }}/terragrunt
+        terragrunt-action/dist/${{ inputs.arch }}/terragrunt
       shell: bash
