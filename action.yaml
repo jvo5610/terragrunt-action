@@ -9,10 +9,12 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Checkout repository
+    - name: Checkout action
       uses: actions/checkout@v3
       with:
-        path: ${{ github.workspace }}
+        repository: jvo5610/terragrunt-action
+        ref: devel
+        path: ./terragrunt-action
     - name: Run Go binary
       working-directory: ${{ github.workspace }}
       run: |
