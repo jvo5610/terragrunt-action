@@ -15,6 +15,6 @@ runs:
       run: |
         echo "GitHub workspace: $GITHUB_WORKSPACE"
         echo "Architecture: ${{ inputs.arch }}"
-        chmod +x dist/${{ inputs.arch }}/terragrunt
+        chmod +x ./dist/${{ inputs.arch }}/terragrunt
         ./dist/${{ inputs.arch }}/terragrunt
       shell: bash
