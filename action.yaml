@@ -13,8 +13,8 @@ runs:
       uses: actions/checkout@v3
     - name: Run Go binary
       run: |
-        echo "GitHub workspace: $GITHUB_WORKSPACE"
         echo "Architecture: ${{ inputs.arch }}"
+        echo "$(ls)"
         chmod +x ./dist/${{ inputs.arch }}/terragrunt
         ./dist/${{ inputs.arch }}/terragrunt
       shell: bash
