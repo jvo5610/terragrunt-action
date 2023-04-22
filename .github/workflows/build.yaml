@@ -22,3 +22,11 @@ jobs:
       working-directory: ./src
       run: |
         make build
+
+    - name: Push dist
+      run: |
+        git config --global user.name "Jose Videla"
+        git config --global user.email "jvidelaolmos@gmail.com"
+        git add .
+        git commit -m "Build dist"
+        git push
