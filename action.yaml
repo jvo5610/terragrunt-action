@@ -16,6 +16,4 @@ runs:
         echo "Architecture: ${{ inputs.arch }}"
         cd ..
         echo "$(ls)"
-        chmod +x ${{ github.workspace }}/dist/${{ inputs.arch }}/terragrunt
-        ${{ github.workspace }}/dist/${{ inputs.arch }}/terragrunt
       shell: bash
