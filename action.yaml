@@ -11,9 +11,11 @@ runs:
   steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        path: ${{ github.workspace }}
     - name: Run Go binary
+      working-directory: ${{ github.workspace }}
       run: |
         echo "Architecture: ${{ inputs.arch }}"
-        cd ..
         echo "$(ls)"
       shell: bash
